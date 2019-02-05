@@ -1,0 +1,6 @@
+[submodule "supermariowar"]
+	path = supermariowar
+	url = https://github.com/mmatyas/supermariowar
+[submodule "switch-homebrew-toolchain-cmake"]
+	path = switch-homebrew-toolchain-cmake
+	url = https://github.com/jfmherokiller/switch-homebrew-toolchain-cmake

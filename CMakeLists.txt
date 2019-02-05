@@ -1,0 +1,30 @@
+cmake_minimum_required(VERSION 2.6)
+
+project(smw-nx)
+
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/supermariowar/cmake")
+
+set(USE_SDL2_LIBS ON CACHE BOOL "override" FORCE)
+set(SDL2_FORCE_GLES ON CACHE BOOL "override" FORCE)
+set(DISABLE_DEFAULT_CFLAGS ON CACHE BOOL "override" FORCE)
+set(NO_NETWORK ON CACHE BOOL "override" FORCE)
+
+set(PORTLIBS_NX_DIR "${DEVKITPRO}/portlibs/switch")
+set(SDL2_INCLUDE_DIR "${PORTLIBS_NX_DIR}/include/SDL2")
+set(SDL2_MIXER_INCLUDE_DIR "${PORTLIBS_NX_DIR}/include/SDL2")
+set(SDL2_IMAGE_INCLUDE_DIR "${PORTLIBS_NX_DIR}/include/SDL2")
+
+list(APPEND CMAKE_THREAD_LIBS_INIT "nx")
+list(APPEND CMAKE_THREAD_LIBS_INIT "glad")
+list(APPEND CMAKE_THREAD_LIBS_INIT "EGL")
+list(APPEND CMAKE_THREAD_LIBS_INIT "glapi")
+list(APPEND CMAKE_THREAD_LIBS_INIT "drm_nouveau")
+list(APPEND CMAKE_THREAD_LIBS_INIT "mpg123")
+list(APPEND CMAKE_THREAD_LIBS_INIT "modplug")
+list(APPEND CMAKE_THREAD_LIBS_INIT "jpeg")
+list(APPEND CMAKE_THREAD_LIBS_INIT "png")
+list(APPEND CMAKE_THREAD_LIBS_INIT "vorbisidec")
+list(APPEND CMAKE_THREAD_LIBS_INIT "ogg")
+
+include_directories(supermariowar)
+add_subdirectory(supermariowar)
