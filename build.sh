@@ -16,6 +16,7 @@ mkdir -p "$ROOT_DIR/out"
 
 cd "$ROOT_DIR/build"
 cmake "$ROOT_DIR" -DCMAKE_TOOLCHAIN_FILE="$ROOT_DIR/Toolchain.cmake"
+make enetshim $MAKE_OPTS
 make smw $MAKE_OPTS
 
 "$DEVKITPRO/tools/bin/nacptool" --create "$APP_TITLE" "$APP_AUTHOR" "$APP_VERSION" "$ROOT_DIR/build/smw.nacp"
