@@ -9,6 +9,7 @@ if [[ -z "$DEVKITPRO" ]]; then
 	echo "env var DEVKITPRO is missing" 1>&2
 	exit 1
 fi
+export SDL2DIR="$DEVKITPRO/portlibs/switch"
 
 mkdir -p "$ROOT_DIR/build"
 mkdir -p "$ROOT_DIR/out"
